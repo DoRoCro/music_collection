@@ -2,7 +2,7 @@ require_relative('../sql_runner.rb')
 
 class Album
 
-  attr_reader :artist_id
+  attr_reader :artist_id, :album_id, :title
 
   def initialize(options)
     @title = options["title"]
@@ -30,9 +30,11 @@ class Album
     return result_objects
   end
 
-  def album_artist
-
+  def artist
+    # returns artist object for album
     sql = "SELECT * FROM artists WHERE artist_id = #{@artist_id};"
+    results = SqlRunner.run(sql)
+    return Artist.new(results.first)
 
   end
 
