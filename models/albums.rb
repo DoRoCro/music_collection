@@ -35,7 +35,15 @@ class Album
     sql = "SELECT * FROM artists WHERE artist_id = #{@artist_id};"
     results = SqlRunner.run(sql)
     return Artist.new(results.first)
+  end
 
+  def edit(changes)
+    @title = changes['title'] if changes['title']
+    @genre = changes['genre'] if changes['genre']
+    @artist_id = changes['artist_id'] if changes['artist_id']
+    sql = "UPDATE albums SET title = '#{@title}', genre = '#{@genre}', artist_id = #{artist_id} WHERE album_id = #{@album_id} RETURNING *;"
+    results = SqlRunner.run(sql)
+    return results
   end
 
 end

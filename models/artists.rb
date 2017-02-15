@@ -14,8 +14,7 @@ class Artist
     # guard against artist already present
     sql = "SELECT * FROM artists WHERE name = '#{@name}'"
     check = SqlRunner.run(sql)
-    binding.pry
-    if check.values.length > 0 # record already exists
+    if check.values.length > 0 # record already exists, so get id from returned array of hash
       @artist_id = check[0]['artist_id']
     else
       sql = "INSERT INTO artists 
@@ -41,6 +40,19 @@ class Artist
     results = SqlRunner.run(sql)
     result_objects = results.map {|result| Album.new(result)}
     return result_objects
+  end
+
+  def edit(changes)
+    @name = changes['name'] if changes['name']
+    sql = "UPDATE artists SET name = '#{@name}' WHERE artist_id = #{@artist_id}"
+    results = SqlRunner.run(sql)
+    return results
+  end
+
+  def delete()
+    sql = "DELETE FROM artists WHERE artist_id = '#{artist_id}"
+    results = SqlRunner.run(sql)
+    return results
   end
 
 end
