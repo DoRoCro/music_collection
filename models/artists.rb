@@ -55,4 +55,10 @@ class Artist
     return results
   end
 
+  def self.find_by_artist_id(id)
+    sql = "SELECT * FROM artists WHERE artist_id = #{id}"
+    results = SqlRunner.run(sql)
+    return Artist.new(results.first)
+  end
+
 end
