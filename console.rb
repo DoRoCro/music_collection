@@ -24,6 +24,6 @@ artist2.albums.each {|x| puts x.album_id.to_s + " " + x.title }
 
 artist2.delete
 album2.delete
-binding.pr
+binding.pry
 puts Album.find_by_album_id(1).title
 puts Artist.find_by_artist_id(1).name
