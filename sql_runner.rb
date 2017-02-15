@@ -6,6 +6,8 @@ class SqlRunner
     begin
       db = PG.connect({dbname: "music_collection", host: "localhost"})
       results = db.exec(sql)
+    rescue
+      #
     ensure
       db.close()
     end

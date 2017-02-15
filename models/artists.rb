@@ -11,14 +11,20 @@ class Artist
   end
 
   def save()
-
-    sql = "INSERT INTO artists 
-    (name)
-    VALUES
-    ('#{@name}') RETURNING artist_id;"
-
-    results = SqlRunner.run(sql)
-    @artist_id = results.first['artist_id'].to_i
+    # guard against artist already present
+    sql = "SELECT * FROM artists WHERE name = '#{@name}'"
+    check = SqlRunner.run(sql)
+    binding.pry
+    if check.values.length > 0 # record already exists
+      @artist_id = check[0]['artist_id']
+    else
+      sql = "INSERT INTO artists 
+      (name)
+      VALUES
+      ('#{@name}') RETURNING artist_id;"
+      results = SqlRunner.run(sql)
+      @artist_id = results.first['artist_id'].to_i
+    end
 
   end
 

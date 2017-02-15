@@ -2,7 +2,7 @@ require('pry')
 require_relative('./models/artists.rb')
 require_relative('./models/albums.rb')
 
-artist1 = Artist.new({"name" => "Bryan Adams"})
+artist1 = Artist.new({"name" => "test_Bryan Adams"})
 artist1.save()
 artist2 = Artist.new({"name" => "David Bowie"})
 artist2.save()
