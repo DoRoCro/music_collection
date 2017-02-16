@@ -1,4 +1,5 @@
 require('PG')
+require('logger')
 
 class SqlRunner
 
@@ -11,6 +12,8 @@ class SqlRunner
     ensure
       db.close()
     end
+    log = Logger.new('sql.log')
+    log.info(sql)
     return results
   end
 

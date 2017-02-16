@@ -1,0 +1,47 @@
+# Logfile created on 2017-02-16 08:51:50 +0000 by logger.rb/53141
+I, [2017-02-16T08:51:50.128916 #45908]  INFO -- : SELECT * FROM artists WHERE name = 'test_Bryan Adams'
+I, [2017-02-16T08:51:50.135795 #45908]  INFO -- : SELECT * FROM artists WHERE name = 'test_David Bowie'
+I, [2017-02-16T08:51:50.143124 #45908]  INFO -- : INSERT INTO albums 
+    (title, genre, artist_id)
+    VALUES
+    ('Greatest Hits', 'Classic Rock', 3) RETURNING album_id;
+I, [2017-02-16T08:51:50.150365 #45908]  INFO -- : INSERT INTO albums 
+    (title, genre, artist_id)
+    VALUES
+    ('Hunky Dory', 'Glam Rock', 2) RETURNING album_id;
+I, [2017-02-16T08:51:50.158041 #45908]  INFO -- : UPDATE artists SET name = 'test_BBryan Addams' WHERE artist_id = 3
+I, [2017-02-16T08:51:50.166087 #45908]  INFO -- : UPDATE albums SET title = 'More Greatest Hits', genre = 'Weird', artist_id = 3 WHERE album_id = 5 RETURNING *;
+I, [2017-02-16T08:51:50.172685 #45908]  INFO -- : SELECT * FROM artists WHERE artist_id = 2;
+I, [2017-02-16T08:51:50.179726 #45908]  INFO -- : SELECT * FROM artists WHERE artist_id = 2;
+I, [2017-02-16T08:51:50.185092 #45908]  INFO -- : SELECT * FROM albums WHERE artist_id = 2;
+I, [2017-02-16T08:51:50.192864 #45908]  INFO -- : DELETE FROM artists WHERE artist_id = '2
+I, [2017-02-16T08:51:50.198220 #45908]  INFO -- : DELETE FROM albums WHERE album_id = '6
+I, [2017-02-16T08:52:21.299171 #45908]  INFO -- : SELECT * FROM albums WHERE album_id = 1
+I, [2017-02-16T08:52:21.305819 #45908]  INFO -- : SELECT * FROM artists WHERE artist_id = 1
+I, [2017-02-16T09:12:37.195980 #46409]  INFO -- : SELECT * FROM artists WHERE name = 'test_Bryan Adams'
+I, [2017-02-16T09:12:37.202468 #46409]  INFO -- : INSERT INTO artists 
+      (name)
+      VALUES
+      ('test_Bryan Adams') RETURNING artist_id;
+I, [2017-02-16T09:12:37.208737 #46409]  INFO -- : SELECT * FROM artists WHERE name = 'test_David Bowie'
+I, [2017-02-16T09:12:37.214611 #46409]  INFO -- : INSERT INTO artists 
+      (name)
+      VALUES
+      ('test_David Bowie') RETURNING artist_id;
+I, [2017-02-16T09:12:37.221306 #46409]  INFO -- : INSERT INTO albums 
+    (title, genre, artist_id)
+    VALUES
+    ('test_Greatest Hits', 'Classic Rock', 4) RETURNING album_id;
+I, [2017-02-16T09:12:37.228397 #46409]  INFO -- : INSERT INTO albums 
+    (title, genre, artist_id)
+    VALUES
+    ('test_Hunky Dory', 'Glam Rock', 5) RETURNING album_id;
+I, [2017-02-16T09:12:37.237028 #46409]  INFO -- : UPDATE artists SET name = 'test_BBryan Addams' WHERE artist_id = 4
+I, [2017-02-16T09:12:37.249527 #46409]  INFO -- : UPDATE albums SET title = 'test_More Greatest Hits', genre = 'Weird', artist_id = 4 WHERE album_id = 4 RETURNING *;
+I, [2017-02-16T09:12:37.254975 #46409]  INFO -- : SELECT * FROM artists WHERE artist_id = 5;
+I, [2017-02-16T09:12:37.260976 #46409]  INFO -- : SELECT * FROM artists WHERE artist_id = 5;
+I, [2017-02-16T09:12:37.269296 #46409]  INFO -- : SELECT * FROM albums WHERE artist_id = 5;
+I, [2017-02-16T09:12:37.273925 #46409]  INFO -- : DELETE FROM artists WHERE artist_id = '5
+I, [2017-02-16T09:12:37.278788 #46409]  INFO -- : DELETE FROM albums WHERE album_id = '5
+I, [2017-02-16T09:13:08.725919 #46409]  INFO -- : SELECT * FROM albums WHERE album_id = 1
+I, [2017-02-16T09:13:08.732060 #46409]  INFO -- : SELECT * FROM artists WHERE artist_id = 1
