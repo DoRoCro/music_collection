@@ -14,12 +14,15 @@ CREATE TABLE albums (
   artist_id INT4 REFERENCES artists(artist_id) -- Foreign Key
 );
 
+
 INSERT INTO artists ( name )
   VALUES ('David Bowie');
 INSERT INTO artists ( name )
   VALUES ('Nirvana');
 INSERT INTO artists ( name )
   VALUES ('Half Man, Half Biscuit');
+
+--below only works on fresh empty database...
 
 INSERT INTO albums ( title, genre, artist_id )
   VALUES ('Back in the DHSS', 'Indie' , 3);
