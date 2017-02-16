@@ -45,3 +45,30 @@ I, [2017-02-16T09:12:37.273925 #46409]  INFO -- : DELETE FROM artists WHERE arti
 I, [2017-02-16T09:12:37.278788 #46409]  INFO -- : DELETE FROM albums WHERE album_id = '5
 I, [2017-02-16T09:13:08.725919 #46409]  INFO -- : SELECT * FROM albums WHERE album_id = 1
 I, [2017-02-16T09:13:08.732060 #46409]  INFO -- : SELECT * FROM artists WHERE artist_id = 1
+I, [2017-02-16T09:28:28.848519 #46764]  INFO -- : SELECT * FROM artists WHERE name = 'test_Bryan Adams'
+I, [2017-02-16T09:28:28.854382 #46764]  INFO -- : INSERT INTO artists 
+      (name)
+      VALUES
+      ('test_Bryan Adams') RETURNING artist_id;
+I, [2017-02-16T09:28:28.860224 #46764]  INFO -- : SELECT * FROM artists WHERE name = 'test_David Bowie'
+I, [2017-02-16T09:28:28.868127 #46764]  INFO -- : INSERT INTO albums 
+    (title, genre, artist_id)
+    VALUES
+    ('test_Greatest Hits', 'Classic Rock', 6) RETURNING album_id;
+I, [2017-02-16T09:28:28.874437 #46764]  INFO -- : INSERT INTO albums 
+    (title, genre, artist_id)
+    VALUES
+    ('test_Hunky Dory', 'Glam Rock', 5) RETURNING album_id;
+I, [2017-02-16T09:28:28.881250 #46764]  INFO -- : UPDATE artists SET name = 'test_BBryan Addams' WHERE artist_id = 6
+I, [2017-02-16T09:28:28.888699 #46764]  INFO -- : UPDATE albums SET title = 'test_More Greatest Hits', genre = 'Weird', artist_id = 6 WHERE album_id = 6 RETURNING *;
+I, [2017-02-16T09:28:28.895035 #46764]  INFO -- : SELECT * FROM artists WHERE artist_id = 5;
+I, [2017-02-16T09:28:28.900799 #46764]  INFO -- : SELECT * FROM artists WHERE artist_id = 5;
+I, [2017-02-16T09:28:28.908410 #46764]  INFO -- : SELECT * FROM albums WHERE artist_id = 5;
+I, [2017-02-16T09:28:28.912713 #46764]  INFO -- : DELETE FROM artists WHERE artist_id = '5
+I, [2017-02-16T09:28:28.916968 #46764]  INFO -- : DELETE FROM albums WHERE album_id = '7
+I, [2017-02-16T09:28:28.922146 #46764]  INFO -- : SELECT * FROM albums WHERE album_id = 1
+I, [2017-02-16T09:28:28.929768 #46764]  INFO -- : SELECT * FROM artists WHERE artist_id = 1
+I, [2017-02-16T09:28:28.941866 #46764]  INFO -- : SELECT * FROM albums WHERE album_id = 2
+I, [2017-02-16T09:28:28.948585 #46764]  INFO -- : SELECT * FROM artists WHERE artist_id = 2
+I, [2017-02-16T09:28:28.956536 #46764]  INFO -- : SELECT * FROM albums WHERE album_id = 3
+I, [2017-02-16T09:28:28.962945 #46764]  INFO -- : SELECT * FROM artists WHERE artist_id = 3

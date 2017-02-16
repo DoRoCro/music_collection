@@ -27,3 +27,7 @@ album2.delete
 # binding.pry
 puts Album.find_by_album_id(1).title + " = Album 1 (if exists)"
 puts Artist.find_by_artist_id(1).name + "= Artist 1 (if exists)"
+puts Album.find_by_album_id(2).title + " = Album 2 (if exists)"
+puts Artist.find_by_artist_id(2).name + "= Artist 2 (if exists)"
+puts Album.find_by_album_id(3).title + " = Album 3 (if exists)"
+puts Artist.find_by_artist_id(3).name + "= Artist 3 (if exists)"
